@@ -123,10 +123,10 @@ def sendemails(request):
 	server=smtplib.SMTP('smtp.gmail.com',587)
 	server.ehlo()
 	server.starttls()
-	server.login("prizeshbhadaniya@gmail.com","prizesh@345")
-	msg='To:'+ user.email +'\n'+'From:prizeshbhadaniya@gmail.com'+'\n'+'Subject:Registration @our app\n'
+	server.login("tofanichokara@gmail.com","Hardik@12345")
+	msg='To:'+ user.email +'\n'+'From:tofanichokara@gmail.com'+'\n'+'Subject:Registration @our app\n'
 	msg=msg+ "Hello " +  user.username + ", Thankuh for being part of our us.we provide content and also give platform to student to show their skills.keep Learning!!!"
-	server.sendmail("prizeshbhadaniya@gmail.com", user.email, msg)
+	server.sendmail("tofanichokara@gmail.com", user.email, msg)
 	if request.session['role']=='student':
 		return render(request,'users/login_student.html')
 	else:
@@ -143,11 +143,11 @@ def forget(request):
 	server=smtplib.SMTP('smtp.gmail.com',587)
 	server.ehlo()
 	server.starttls()
-	server.login("prizeshbhadaniya@gmail.com","prizesh@345")
+	server.login("tofanichokara@gmail.com","Hardik@12345")
 	email=request.POST.get('mail','')
-	msg='To:'+ email+'\n'+'From:prizeshbhadaniya@gmail.com'+'\n'+'Subject:set new password\n'
+	msg='To:'+ email+'\n'+'From:tofanichokara@gmail.com'+'\n'+'Subject:set new password\n'
 	msg = msg +'hello , our provided otp is  ' + otp
-	server.sendmail("prizeshbhadaniya@gmail.com",email,msg)
+	server.sendmail("tofanichokara@gmail.com",email,msg)
 	print("Mail Sent Successfully")
 	return render(request,'users/otp.html')
 
